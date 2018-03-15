@@ -11,11 +11,6 @@ public class HoiusKonto extends Konto {
     this.hoiuseTähtaeg = LocalDateTime.now().plusDays(pikkusPäevades);
   }
 
-  public HoiusKonto(String omanik, int pin, int pikkusPäevades) {
-    super(omanik, pin);
-    this.hoiuseTähtaeg = LocalDateTime.now().plusDays(pikkusPäevades);
-  }
-
   @Override
   void sisseMakse(double summa) {
     System.out.println("Hoius lukus");
@@ -23,7 +18,7 @@ public class HoiusKonto extends Konto {
 
   @Override
   void valjaMakse(double summa) {
-    if (hoiuseTähtaeg.isAfter(LocalDateTime.now())) {
+    if (hoiuseTähtaeg.isBefore(LocalDateTime.now())) {
       if (getSaldo() >= summa) {
         setSaldo(getSaldo() - summa);
         System.out.println("Väljastan: " + summa);

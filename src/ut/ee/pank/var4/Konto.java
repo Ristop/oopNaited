@@ -2,7 +2,7 @@ package ut.ee.pank.var4;
 
 // Loome abstraktse klassi Konto millel on kaks abstraktset meetodit sisseMakse ja väljaMakse
 // Kõik abstraktsed meetodid on üle kirjutatud alamklassides HoiusKonto ja TavalineKonto
-abstract class Konto {
+abstract class Konto implements Comparable<Konto>{
 
   private String omanik;
   private int pin;
@@ -41,6 +41,19 @@ abstract class Konto {
   @Override
   public String toString() {
     return omanik + " (" + saldo + ")";
+  }
+
+  @Override
+  public int compareTo(Konto o) {
+    if (this.saldo > o.getSaldo()) {
+      return 1;
+    }
+    else if (this.saldo < o.getSaldo()) {
+      return -1;
+    }
+    else {
+      return 0;
+    }
   }
 
 }

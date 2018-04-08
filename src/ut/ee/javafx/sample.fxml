@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ut.ee.javafx.Controller">
+   <children>
+      <Button fx:id="lisaKontoButton" layoutX="503.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#lisaKonto" text="Lisa Konto" />
+      <TextField fx:id="nimiField" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="82.0" promptText="Nimi" />
+      <TextField fx:id="PINField" layoutX="104.0" layoutY="14.0" prefHeight="27.0" prefWidth="82.0" promptText="PIN" />
+      <TextField fx:id="saldoField" layoutX="194.0" layoutY="14.0" prefHeight="27.0" prefWidth="82.0" promptText="Saldo" />
+      <ListView fx:id="kontoListView" layoutX="14.0" layoutY="53.0" prefHeight="333.0" prefWidth="574.0" />
+      <CheckBox fx:id="isHoiusKontoCheckBox" layoutX="285.0" layoutY="19.0" mnemonicParsing="false" onAction="#enableHoiusKonto" text="HoiusKonto" />
+      <TextField fx:id="pikkusPaevadesField" disable="true" layoutX="389.0" layoutY="14.0" prefHeight="27.0" prefWidth="82.0" promptText="Pikkus" />
+   </children>
+</Pane>
